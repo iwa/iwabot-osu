@@ -1,7 +1,7 @@
 package osuapiv2
 
 type Score struct {
-	Accuracy          float64         `json:"accuracy"`
+	Accuracy          float32         `json:"accuracy"`
 	BeatmapId         int             `json:"beatmap_id"`
 	ClassicTotalScore int             `json:"classic_total_score"`
 	EndedAt           string          `json:"ended_at"`
@@ -12,7 +12,7 @@ type Score struct {
 	Mods              []string        `json:"mods"`
 	Passed            bool            `json:"passed"`
 	PlaylistItemId    int             `json:"playlist_item_id"`
-	PP                float64         `json:"pp"`
+	PP                float32         `json:"pp"`
 	Preserve          bool            `json:"preserve"`
 	Processed         bool            `json:"processed"`
 	Rank              string          `json:"rank"`
@@ -24,6 +24,8 @@ type Score struct {
 	TotalScore        int             `json:"total_score"`
 	Type              string          `json:"type"`
 	UserId            int             `json:"user_id"`
+	Beatmap           ScoreBeatmap    `json:"beatmap"`
+	BeatmapSet        ScoreBeatmapSet `json:"beatmapset"`
 }
 
 type ScoreStatistics struct {
@@ -42,14 +44,14 @@ type ScoreBeatmap struct {
 	Status        string  `json:"status"`
 	Version       string  `json:"version"`
 	TotalLength   int     `json:"total_length"`
-	Accuracy      float64 `json:"accuracy"`
-	Ar            int     `json:"ar"`
+	Accuracy      float32 `json:"accuracy"`
+	Ar            float32 `json:"ar"`
 	BPM           int     `json:"bpm"`
 	CountCircles  int     `json:"count_circles"`
 	CountSliders  int     `json:"count_sliders"`
 	CountSpinners int     `json:"count_spinners"`
-	CS            float64 `json:"cs"`
-	Drain         int     `json:"drain"`
+	CS            float32 `json:"cs"`
+	Drain         float32 `json:"drain"`
 	HitLength     int     `json:"hit_length"`
 	LastUpdated   string  `json:"last_updated"`
 	Passcount     int     `json:"passcount"`
