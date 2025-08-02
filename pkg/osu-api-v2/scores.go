@@ -34,3 +34,53 @@ type ScoreStatistics struct {
 	CountKatu int `json:"count_katu"`
 	CountMiss int `json:"count_miss"`
 }
+
+type ScoreBeatmap struct {
+	BeatmapSetID  int     `json:"beatmapset_id"`
+	ID            int     `json:"id"`
+	Mode          string  `json:"mode"`
+	Status        string  `json:"status"`
+	Version       string  `json:"version"`
+	TotalLength   int     `json:"total_length"`
+	Accuracy      float64 `json:"accuracy"`
+	Ar            int     `json:"ar"`
+	BPM           int     `json:"bpm"`
+	CountCircles  int     `json:"count_circles"`
+	CountSliders  int     `json:"count_sliders"`
+	CountSpinners int     `json:"count_spinners"`
+	CS            float64 `json:"cs"`
+	Drain         int     `json:"drain"`
+	HitLength     int     `json:"hit_length"`
+	LastUpdated   string  `json:"last_updated"`
+	Passcount     int     `json:"passcount"`
+	Playcount     int     `json:"playcount"`
+	Ranked        int     `json:"ranked"`
+	URL           string  `json:"url"`
+	Checksum      string  `json:"checksum"`
+}
+
+type ScoreBeatmapSet struct {
+	Artist         string `json:"artist"`
+	ArtistUnicode  string `json:"artist_unicode"`
+	Covers         Covers `json:"covers"`
+	Creator        string `json:"creator"`
+	FavouriteCount int    `json:"favourite_count"`
+	ID             int    `json:"id"`
+	Playcount      int    `json:"play_count"`
+	Source         string `json:"source"`
+	Status         string `json:"status"`
+	Title          string `json:"title"`
+	TitleUnicode   string `json:"title_unicode"`
+	UserId         int    `json:"user_id"`
+}
+
+type Covers struct {
+	Cover       string `json:"cover"`
+	Cover2x     string `json:"cover@2x"`
+	Card        string `json:"card"`
+	Card2x      string `json:"card@2x"`
+	List        string `json:"list"`
+	List2x      string `json:"list@2x"`
+	Slimcover   string `json:"slimcover"`
+	Slimcover2x string `json:"slimcover@2x"`
+}
