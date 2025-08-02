@@ -16,7 +16,7 @@ const (
 type OsuApiClient struct {
 	ClientId     string
 	ClientSecret string
-	accessToken  string
+	AccessToken  string
 }
 
 type OauthRequestData struct {
