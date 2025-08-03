@@ -38,27 +38,28 @@ type ScoreStatistics struct {
 }
 
 type ScoreBeatmap struct {
-	BeatmapSetID  int     `json:"beatmapset_id"`
-	ID            int     `json:"id"`
-	Mode          string  `json:"mode"`
-	Status        string  `json:"status"`
-	Version       string  `json:"version"`
-	TotalLength   int     `json:"total_length"`
-	Accuracy      float32 `json:"accuracy"`
-	Ar            float32 `json:"ar"`
-	BPM           int     `json:"bpm"`
-	CountCircles  int     `json:"count_circles"`
-	CountSliders  int     `json:"count_sliders"`
-	CountSpinners int     `json:"count_spinners"`
-	CS            float32 `json:"cs"`
-	Drain         float32 `json:"drain"`
-	HitLength     int     `json:"hit_length"`
-	LastUpdated   string  `json:"last_updated"`
-	Passcount     int     `json:"passcount"`
-	Playcount     int     `json:"playcount"`
-	Ranked        int     `json:"ranked"`
-	URL           string  `json:"url"`
-	Checksum      string  `json:"checksum"`
+	BeatmapSetID     int     `json:"beatmapset_id"`
+	DifficultyRating float32 `json:"difficulty_rating"`
+	ID               int     `json:"id"`
+	Mode             string  `json:"mode"`
+	Status           string  `json:"status"`
+	Version          string  `json:"version"`
+	TotalLength      int     `json:"total_length"`
+	Accuracy         float32 `json:"accuracy"`
+	Ar               float32 `json:"ar"`
+	BPM              int     `json:"bpm"`
+	CountCircles     int     `json:"count_circles"`
+	CountSliders     int     `json:"count_sliders"`
+	CountSpinners    int     `json:"count_spinners"`
+	CS               float32 `json:"cs"`
+	Drain            float32 `json:"drain"`
+	HitLength        int     `json:"hit_length"`
+	LastUpdated      string  `json:"last_updated"`
+	Passcount        int     `json:"passcount"`
+	Playcount        int     `json:"playcount"`
+	Ranked           int     `json:"ranked"`
+	URL              string  `json:"url"`
+	Checksum         string  `json:"checksum"`
 }
 
 type ScoreBeatmapSet struct {
