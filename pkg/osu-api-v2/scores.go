@@ -87,3 +87,10 @@ type Covers struct {
 	Slimcover   string `json:"slimcover"`
 	Slimcover2x string `json:"slimcover@2x"`
 }
+
+type ScoreUser struct {
+	ID          int    `json:"id"`
+	Username    string `json:"username"`
+	AvatarURL   string `json:"avatar_url"`
+	CountryCode string `json:"country_code"`
+}
