@@ -26,6 +26,7 @@ type Score struct {
 	UserId            int             `json:"user_id"`
 	Beatmap           ScoreBeatmap    `json:"beatmap"`
 	BeatmapSet        ScoreBeatmapSet `json:"beatmapset"`
+	User              ScoreUser       `json:"user"`
 }
 
 type ScoreStatistics struct {
