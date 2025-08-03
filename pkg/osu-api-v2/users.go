@@ -7,7 +7,7 @@ import (
 )
 
 func (client *OsuApiClient) GetUserRecentScores(userId int, limit int, mode string) ([]Score, error) {
-	url := fmt.Sprintf("%s/users/%d/scores/recent?limit=%d", BaseURL, userId, limit)
+	url := fmt.Sprintf("%s/users/%d/scores/recent?include_fails=1&limit=%d", BaseURL, userId, limit)
 
 	if mode != "" {
 		url += fmt.Sprintf("&mode=%s", mode)
