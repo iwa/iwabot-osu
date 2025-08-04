@@ -1,59 +1,66 @@
 package osuapiv2
 
 type Score struct {
-	Accuracy          float32         `json:"accuracy"`
-	BeatmapId         int             `json:"beatmap_id"`
-	ClassicTotalScore int             `json:"classic_total_score"`
-	EndedAt           string          `json:"ended_at"`
-	HasReplay         bool            `json:"has_replay"`
-	ID                int             `json:"id"`
-	IsPerfectCombo    bool            `json:"is_perfect_combo"`
-	MaxCombo          int             `json:"max_combo"`
-	Mods              []string        `json:"mods"`
-	Passed            bool            `json:"passed"`
-	PlaylistItemId    int             `json:"playlist_item_id"`
-	PP                float32         `json:"pp"`
-	Preserve          bool            `json:"preserve"`
-	Processed         bool            `json:"processed"`
-	Rank              string          `json:"rank"`
-	Ranked            bool            `json:"ranked"`
-	RoomId            int             `json:"room_id"`
-	RulesetId         int             `json:"ruleset_id"`
-	StartedAt         string          `json:"started_at"`
-	Statistics        ScoreStatistics `json:"statistics"`
-	TotalScore        int             `json:"total_score"`
-	Type              string          `json:"type"`
-	UserId            int             `json:"user_id"`
-	Beatmap           ScoreBeatmap    `json:"beatmap"`
-	BeatmapSet        ScoreBeatmapSet `json:"beatmapset"`
-	User              ScoreUser       `json:"user"`
+	Accuracy          float64 `json:"accuracy"`
+	BeatmapId         int     `json:"beatmap_id"`
+	ClassicTotalScore int     `json:"classic_total_score"`
+	EndedAt           string  `json:"ended_at"`
+	HasReplay         bool    `json:"has_replay"`
+	ID                int     `json:"id"`
+	IsPerfectCombo    bool    `json:"is_perfect_combo"`
+	MaxCombo          int     `json:"max_combo"`
+	MaximumStatistics struct {
+		Great         int `json:"great"`
+		IgnoreHit     int `json:"ignore_hit"`
+		LargeTickHit  int `json:"large_tick_hit"`
+		SliderTailHit int `json:"slider_tail_hit"`
+	} `json:"maximum_statistics"`
+	Mods           []string        `json:"mods"`
+	Passed         bool            `json:"passed"`
+	PlaylistItemId int             `json:"playlist_item_id"`
+	PP             float64         `json:"pp"`
+	Preserve       bool            `json:"preserve"`
+	Processed      bool            `json:"processed"`
+	Rank           string          `json:"rank"`
+	Ranked         bool            `json:"ranked"`
+	RoomId         int             `json:"room_id"`
+	RulesetId      int             `json:"ruleset_id"`
+	StartedAt      string          `json:"started_at"`
+	Statistics     ScoreStatistics `json:"statistics"`
+	TotalScore     int             `json:"total_score"`
+	Type           string          `json:"type"`
+	UserId         int             `json:"user_id"`
+	Beatmap        ScoreBeatmap    `json:"beatmap"`
+	BeatmapSet     ScoreBeatmapSet `json:"beatmapset"`
+	User           ScoreUser       `json:"user"`
 }
 
 type ScoreStatistics struct {
-	Count50   int `json:"count_50"`
-	Count100  int `json:"count_100"`
-	Count300  int `json:"count_300"`
-	CountGeki int `json:"count_geki"`
-	CountKatu int `json:"count_katu"`
-	CountMiss int `json:"count_miss"`
+	CountMiss     int `json:"miss"`
+	Count50       int `json:"meh"`
+	Count100      int `json:"ok"`
+	Count300      int `json:"great"`
+	IgnoreHit     int `json:"ignore_hit"`
+	LargeTickHit  int `json:"large_tick_hit"`
+	SliderTailHit int `json:"slider_tail_hit"`
 }
 
 type ScoreBeatmap struct {
 	BeatmapSetID     int     `json:"beatmapset_id"`
-	DifficultyRating float32 `json:"difficulty_rating"`
+	DifficultyRating float64 `json:"difficulty_rating"`
 	ID               int     `json:"id"`
 	Mode             string  `json:"mode"`
 	Status           string  `json:"status"`
 	Version          string  `json:"version"`
 	TotalLength      int     `json:"total_length"`
-	Accuracy         float32 `json:"accuracy"`
-	Ar               float32 `json:"ar"`
+	Accuracy         float64 `json:"accuracy"`
+	Ar               float64 `json:"ar"`
 	BPM              int     `json:"bpm"`
 	CountCircles     int     `json:"count_circles"`
 	CountSliders     int     `json:"count_sliders"`
 	CountSpinners    int     `json:"count_spinners"`
-	CS               float32 `json:"cs"`
-	Drain            float32 `json:"drain"`
+	CS               float64 `json:"cs"`
+	Drain            float64 `json:"drain"`
 	HitLength        int     `json:"hit_length"`
 	LastUpdated      string  `json:"last_updated"`
 	Passcount        int     `json:"passcount"`

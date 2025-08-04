@@ -20,6 +20,7 @@ func (client *OsuApiClient) GetUserRecentScores(userId int, limit int, mode stri
 
 	req.Header.Set("Authorization", "Bearer "+client.AccessToken)
 	req.Header.Set("Accept", "application/json")
+	req.Header.Set("x-api-version", "20240529")
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
