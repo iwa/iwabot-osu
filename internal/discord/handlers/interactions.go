@@ -56,6 +56,16 @@ func rs(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		panic("Failed to get user recent scores: " + err.Error())
 	}
 
+	if len(scores) == 0 {
+		s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+			Type: discordgo.InteractionResponseChannelMessageWithSource,
+			Data: &discordgo.InteractionResponseData{
+				Content: "No recent scores found for user.",
+			},
+		})
+		return
+	}
+
 	var component discordgo.MessageEmbed
 	for _, score := range scores {
 		component.Title = fmt.Sprintf("%s - %s [%s] [%.2f*]", score.BeatmapSet.Artist, score.BeatmapSet.Title, score.Beatmap.Version, float64(score.Beatmap.DifficultyRating))
